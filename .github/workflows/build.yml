@@ -43,6 +43,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install buildozer Cython==0.29.34 virtualenv
 
+      - name: Check project files
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 -name "buildozer.spec"
+
       - name: Build Android APK
         run: buildozer android debug
 
